@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="container" style="width: 400px; height: 600px; overflow-y: scroll;">
+      <v-select class="v-select" :options="options"/>
+      <v-select class="v-select" :options="options"/>
+      <v-select class="v-select" :options="options"/>
+      <v-select class="v-select" :options="options"/>
+      <v-select class="v-select" :options="options"/>
+      <v-select class="v-select" :options="options"/>
+      <v-select class="v-select" :options="options"/>
+      <v-select class="v-select" :options="options"/>
+      <v-select class="v-select" :options="options"/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import vSelect from 'vue-select'
+import 'vue-select/dist/vue-select.css'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    vSelect
+  },
+  computed: {
+    options() {
+      return [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+body {
+  #container {
+    background-color: #fbf2d4;
+
+    .v-select {
+      margin: 48px;
+    }
+  }
 }
 </style>
+
